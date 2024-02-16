@@ -237,13 +237,121 @@ docker container rm <nombre_contenedor>
 docker build -t my_app:v1 .
 ```
 
+## Docker Volumes
+
+Cada vez que hacemos cambios a nuestra aplicación tendríamos que volverla a hacer `build` y luego `start` constantemente vamos a añadir un par de puntos a nuestro proyecto de `NodeJS` para que veamos esto en practica.
+
+```bash
+#Corremos la aplicación y sorpresa, los cambios no aparecen
+docker start -i my_app
+
+# Así que utilizaremos los volumenes para poder reflejar estos cambios
+```
+
+Antes de ello vamos a instalar nodemon en el proyecto y modificaremos el Dockerfile
+
+Instalamos nodemon en nuestra app
+```bash
+npm install --save-dev nodemon
+```
+
+package.json
+```json
+// Añadimos nuestro script a el package.json
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L app.js"
+    },
+```
+
+Dockerfile
+```dockerfile
+FROM node:17-alpine
+
+#Instalamos nodemon en nuestro Docker
+RUN npm install -g nodemon
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+
+EXPOSE 4000
+
+#Le indicamos que inicie nuestro script
+CMD [ "npm", "run", "dev"]
+```
+
+Posteriormente volvemos a crear nuestra imagén
+
+```bash
+#Hacemos build
+docker build -t my_app:nodemon .
+
+#Iniciamos el contenedopr
+docker run --name my_app_c_nodemon -p 4000:4000 --rm my_app:nodemon
+
+#--rm indica que removerá el contenedor después de cerrarlo.
+```
+Ahora visitamos `http://localhost:4000` y tenemos nuestro proyecto montado!
+
+Pero tenemos un problema, da igual los cambios que hagamos en nuestro proyecto local este no cambia en el servidor, en este caso tendremos que usar los ***volumenes***
+
+```bash
+# Añadimos la bandera -v
+
+#docker run --name my_app_c_nodemon -p 4000:4000 --rm -v <path_real_directorio>:/<directorio_docker> my_app:nodemon
+# Asegurate de que la terminal este en /L1
+docker run --name my_app_c_nodemon -p 4000:4000 --rm -v ${PWD}\.:/app my_app:nodemon
+```
+## Docker Compose
+
+Viendo la complejidad de utilizar dichos volumenes tenemos una solución más adecuada, la cual sería el ***Docker Compose***
+
+Creamos un archivo `docker-compose.yaml`
+
+docker-compose.yaml
+```yaml
+version: '3.8'
+services:
+  lesson1:
+    build: ./
+    container_name: app_comp_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+```
+
+Despues levantamos nuestro docker-compose
+```bash
+docker-compose up
+```
+
+Para apagarlo hacemos
+
+```bash
+docker-compose down
+```
+
+Si queremos eliminar las imagenes también usamos
+```bash
+#Solo las imagenes y contenedores
+docker-compose down --rmi all
+# Borrando con los volumenes
+docker-compose down --rmi all -v
+```
+
 ## Fuentes
 
 [Docker Crash Course](https://youtu.be/31ieHmcTUOk?si=CflT7FgUEm7HbYXe)
 
 [Qué es Docker - Amazon Web Services](https://aws.amazon.com/es/docker/)
-
-[Qué es Docker - Oracle](https://www.oracle.com/es/cloud/cloud-native/container-registry/what-is-docker/#:~:text=Un%20contenedor%20de%20Docker%20es,c%C3%B3digo%20y%20tiempo%20de%20ejecuci%C3%B3n.)
 
 [Aprende Docker - Microsoft](https://learn.microsoft.com/es-es/training/modules/intro-to-docker-containers/)
 

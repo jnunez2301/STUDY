@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  lesson1:
+    build: ./
+    container_name: app_comp_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
