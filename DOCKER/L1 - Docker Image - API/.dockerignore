@@ -1,0 +1,2 @@
+# Ignora los modulos de node para que no se copien en la imagén.
+node_modules
