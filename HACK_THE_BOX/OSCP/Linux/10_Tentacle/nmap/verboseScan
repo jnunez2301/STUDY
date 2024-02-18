@@ -1,0 +1,26 @@
+# Nmap 7.94SVN scan initiated Wed Feb 14 17:50:09 2024 as: nmap -sVC -sS -p22,53,88,3128 -vvv -oN verboseScan 10.10.10.224
+Nmap scan report for realcorp.htb (10.10.10.224)
+Host is up, received echo-reply ttl 63 (0.049s latency).
+Scanned at 2024-02-14 17:50:09 EST for 22s
+
+PORT     STATE SERVICE      REASON         VERSION
+22/tcp   open  ssh          syn-ack ttl 63 OpenSSH 8.0 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 8d:dd:18:10:e5:7b:b0:da:a3:fa:14:37:a7:52:7a:9c (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+kAz7g80bfMUdNCm4e54eIGFeFFwEIUvieBfBq/B4pm1NCa2XPPCs0hHL1S7myYvcxmlM3TW2oE0p4Y5lScvISBljVQSXvIWxPreotbiBYSJ8hnmXKpc1KAjiyA9fAEPYCypL4/yHyMDl4m0GIElshzKZClxQBF9Qgt9eI+hAmB1b4iz6h3zOcFNzgtsqki1KqbkHhrlFxRko0P4boCa5qzQDeHXSyG/7Eg6b4i5JEJhowqjRjmHs5pvbHJBJagqHgUesFuwgvp0/pxwvK1FD1GvfhGlNwMnr8TWA5VNXQ+ZIaOFfftKPjfBBwwUxgIRbCLJSEt0YTIc2mr0HRQi+yHFxBkC6OLPqzpXP57lXyRXEWXefvqkRrVtz7EgqfyV5aZVGobE8tgmypiYYvFMfXYH14jXFYoVts6+R0qeGJ0PA3FygWQpDDthIA1ok/6dlb2xPz6ktSOvCp/f5LLHGLSMfpjTwadeTpu2g3DWpCozUTol/wFWLH2y/wqUTiak=
+|   256 f6:a9:2e:57:f8:18:b6:f4:ee:03:41:27:1e:1f:93:99 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDEUXStQR+Skq5wAn4zjO2SSm45o1cMxUeh+gFslfEaKWNGF+hTyXzv/AeTZ2ggp3dySOGudrTD4FzvW9/mTnxM=
+|   256 04:74:dd:68:79:f4:22:78:d8:ce:dd:8b:3e:8c:76:3b (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGaEuqAyutfTuj3KR9B6qEaIZAc2oszJPVDC1JEGv36y
+53/tcp   open  domain       syn-ack ttl 63 ISC BIND 9.11.20 (RedHat Enterprise Linux 8)
+| dns-nsid: 
+|_  bind.version: 9.11.20-RedHat-9.11.20-5.el8
+88/tcp   open  kerberos-sec syn-ack ttl 63 MIT Kerberos (server time: 2024-02-14 22:50:16Z)
+3128/tcp open  http-proxy   syn-ack ttl 63 Squid http proxy 4.11
+|_http-title: ERROR: The requested URL could not be retrieved
+|_http-server-header: squid/4.11
+Service Info: OS: Linux; CPE: cpe:/o:redhat:enterprise_linux:8
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Feb 14 17:50:31 2024 -- 1 IP address (1 host up) scanned in 22.17 seconds

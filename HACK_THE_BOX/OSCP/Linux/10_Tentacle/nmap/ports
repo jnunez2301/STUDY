@@ -1,0 +1,12 @@
+# Nmap 7.94SVN scan initiated Wed Feb 14 16:56:06 2024 as: nmap --open --min-rate 5000 -Pn -sS -oN ports 10.10.10.224
+Nmap scan report for 10.10.10.224
+Host is up (0.051s latency).
+Not shown: 989 filtered tcp ports (no-response), 6 filtered tcp ports (admin-prohibited), 1 closed tcp port (reset)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+22/tcp   open  ssh
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+3128/tcp open  squid-http
+
+# Nmap done at Wed Feb 14 16:56:06 2024 -- 1 IP address (1 host up) scanned in 0.65 seconds

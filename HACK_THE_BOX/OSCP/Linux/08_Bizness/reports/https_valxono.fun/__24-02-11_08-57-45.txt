@@ -1,0 +1,29 @@
+# Dirsearch started Sun Feb 11 08:58:01 2024 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u https://valxono.fun/ -e*
+
+301   308B   https://valxono.fun/js    -> REDIRECTS TO: http://valxono.fun/js/
+403   276B   https://valxono.fun/.ht_wsr.txt
+403   276B   https://valxono.fun/.htaccess.bak1
+403   276B   https://valxono.fun/.htaccess.orig
+403   276B   https://valxono.fun/.htaccess.sample
+403   276B   https://valxono.fun/.htaccess_orig
+403   276B   https://valxono.fun/.htaccess.save
+403   276B   https://valxono.fun/.htaccess_extra
+403   276B   https://valxono.fun/.htaccess_sc
+403   276B   https://valxono.fun/.htaccessBAK
+403   276B   https://valxono.fun/.htaccessOLD2
+403   276B   https://valxono.fun/.htaccessOLD
+403   276B   https://valxono.fun/.html
+403   276B   https://valxono.fun/.htpasswd_test
+403   276B   https://valxono.fun/.htm
+403   276B   https://valxono.fun/.htpasswds
+403   276B   https://valxono.fun/.httr-oauth
+403   276B   https://valxono.fun/.php
+404   555B   https://valxono.fun/.well-known/acme-challenge/dtfy
+403     4KB  https://valxono.fun/.wp-config.php.swp
+301   317B   https://valxono.fun/__pycache__    -> REDIRECTS TO: http://valxono.fun/__pycache__/
+301   311B   https://valxono.fun/admin    -> REDIRECTS TO: http://valxono.fun/admin/
+200    49B   https://valxono.fun/admin/
+200    49B   https://valxono.fun/admin/index.php
+200    49B   https://valxono.fun/admin/index
+200     3KB  https://valxono.fun/admin/login
+200     3KB  https://valxono.fun/admin/login.php

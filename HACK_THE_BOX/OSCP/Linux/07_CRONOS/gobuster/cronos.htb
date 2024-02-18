@@ -1,0 +1,10 @@
+/.htpasswd           [33m (Status: 403)[0m [Size: 294]
+/.hta                [33m (Status: 403)[0m [Size: 289]
+/.htaccess           [33m (Status: 403)[0m [Size: 294]
+/css                 [36m (Status: 301)[0m [Size: 306][34m [--> http://cronos.htb/css/][0m
+/favicon.ico         [32m (Status: 200)[0m [Size: 0]
+/index.php           [32m (Status: 200)[0m [Size: 2319]
+/js                  [36m (Status: 301)[0m [Size: 305][34m [--> http://cronos.htb/js/][0m
+/robots.txt          [32m (Status: 200)[0m [Size: 24]
+/server-status       [33m (Status: 403)[0m [Size: 298]
+/web.config          [32m (Status: 200)[0m [Size: 914]

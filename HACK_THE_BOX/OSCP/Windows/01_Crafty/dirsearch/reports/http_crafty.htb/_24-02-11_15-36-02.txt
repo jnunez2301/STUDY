@@ -1,0 +1,11 @@
+# Dirsearch started Sun Feb 11 15:37:01 2024 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://crafty.htb -e*
+
+403   312B   http://crafty.htb/%2e%2e//google.com
+301   144B   http://crafty.htb/js    -> REDIRECTS TO: http://crafty.htb/js/
+403   312B   http://crafty.htb/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+403   312B   http://crafty.htb/\..\..\..\..\..\..\..\..\..\etc\passwd
+403   312B   http://crafty.htb/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+301   145B   http://crafty.htb/css    -> REDIRECTS TO: http://crafty.htb/css/
+301   145B   http://crafty.htb/img    -> REDIRECTS TO: http://crafty.htb/img/
+301   145B   http://crafty.htb/index.html    -> REDIRECTS TO: http://crafty.htb/home
+403     1KB  http://crafty.htb/js/

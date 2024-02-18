@@ -1,0 +1,16 @@
+# Nmap 7.94SVN scan initiated Sun Feb  4 16:16:31 2024 as: nmap -sVC -p80 -oN portScan -vv 10.10.10.68
+Nmap scan report for 10.10.10.68
+Host is up, received reset ttl 63 (0.030s latency).
+Scanned at 2024-02-04 16:16:44 EST for 8s
+
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.18 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Arrexel's Development Site
+|_http-favicon: Unknown favicon MD5: 6AA5034A553DFA77C3B2C7B4C26CF870
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb  4 16:16:52 2024 -- 1 IP address (1 host up) scanned in 20.45 seconds

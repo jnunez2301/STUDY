@@ -1,0 +1,11 @@
+# Nmap 7.94SVN scan initiated Tue Feb  6 17:56:51 2024 as: nmap -sV -p 22 --script ssh-brute -oN sshEnum 10.10.10.84
+Nmap scan report for 10.10.10.84
+Host is up (0.035s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2 (FreeBSD 20161230; protocol 2.0)
+|_ssh-brute: Password authentication not allowed
+Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Feb  6 17:57:20 2024 -- 1 IP address (1 host up) scanned in 28.78 seconds
